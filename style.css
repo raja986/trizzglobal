@@ -1,0 +1,319 @@
+/* html {
+    background-color: #025B30 ;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.header {
+    background-color: green;
+    padding: 10px;
+    width: 100%;
+    text-align: right;
+}
+.header a {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: lightgreen;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    background-image:url('https://i.imgur.com/qH0145i.jpg');
+    background-size: cover;
+    background:green;
+    position:relative ;
+}
+
+.menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.menu a {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: lightgreen;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgreen;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px;
+    border: none;
+    background-color: lightgreen;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.slideshow-container {
+    position: relative;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 300px;
+}
+.slideshow {
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+}
+.slideshow img {
+    width: 100%;
+    display: none;
+}
+.slideshow img:first-child {
+    display: block;
+}
+.about-us {
+    padding: 20px;
+    border-radius: 8px;
+    color: black;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    max-width: 300px;
+    text-align: center;
+}
+.leaderboard {
+    padding: 20px;
+    border-radius: 8px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8); 
+    max-width: 300px;
+    text-align: center;
+}
+.leaderboard ol {
+    padding-left: 0;
+    list-style: none;
+}
+.prev, .next {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .header {
+        width: 100%;
+        text-align: center;
+    }
+    .slideshow-container {
+        width: 90%;
+    }
+}
+
+*/
+
+@import url('https://fonts.cdnfonts.com/css/porcelain-2');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+nav {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    background-color: #054926;
+    opacity: 0.8;
+    z-index: 1;
+
+}
+
+nav > * {
+    opacity: 1;
+}
+
+a > h1 {
+    font-size: 100px;
+}
+
+nav>ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+}
+
+nav>ul>li {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+h2 > a {
+    text-decoration: none;
+    color: white;
+}
+
+.hero {
+    height: 100vh;
+}
+
+.about {
+    background-color: #47bd47;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about > h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 5rem;
+    color: white;
+    font-family: "Cedarville Cursive", cursive;
+}
+
+.about > p {
+    font-family: cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 2rem;
+    margin-right: 2rem;
+    color: white;
+}
+
+.dropdown > button > a {
+    color: white;
+    text-decoration: none;
+}
+
+.carousel {
+    height: 100vh;
+}
+
+.carousel-item > img {
+    height: 100vh;
+    width: 100vw;
+}
+
+.login > .login-svg {
+    position: absolute;
+    width: 250px;
+    transform: translate(0%, -50%);
+}
+
+.login {
+    border-radius: 50px;
+    background-color: #32a852;
+    background-image: url('./23aecd473d976a953570553a0283af52.svg');
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 50vh;
+    position: absolute;
+    top: 30%;
+    background-position: center;
+    left: 65%;
+}
+
+.login > * {
+    font-family: 'Porcelain', sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 1rem;
+}
+
+.form-group > label {
+    font-size: 2.5rem;
+}
+
+.form-group > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+form > * {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leaderboard-item {
+    width: 70vw;
+    height: 8vh;
+    background-color: red;
+}
+
+.number {
+    position: relative;
+    top: -50%;
+    left: 80%;
+}
+
+.leaderboard > li{
+    list-style: none;
+}
+
+.leaderboard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
