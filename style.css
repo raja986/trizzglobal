@@ -200,11 +200,11 @@ h2 > a {
 }
 
 .hero {
-    height: 100vh;
+    height: 50vh;
 }
 
 .about {
-    background-color: #47bd47;
+    background-color: #025B30;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -237,15 +237,6 @@ h2 > a {
     text-decoration: none;
 }
 
-.carousel {
-    height: 100vh;
-}
-
-.carousel-item > img {
-    height: 100vh;
-    width: 100vw;
-}
-
 .login > .login-svg {
     position: absolute;
     width: 250px;
@@ -254,7 +245,7 @@ h2 > a {
 
 .login {
     border-radius: 50px;
-    background-color: #32a852;
+    background-color: #79dd4e;
     background-image: url('./23aecd473d976a953570553a0283af52.svg');
     background-repeat: no-repeat;
     color: white;
@@ -264,7 +255,7 @@ h2 > a {
     width: 30vw;
     height: 50vh;
     position: absolute;
-    top: 30%;
+    top: 25%;
     background-position: center;
     left: 65%;
 }
@@ -276,8 +267,14 @@ h2 > a {
     margin: 1rem;
 }
 
+
+
 .form-group > label {
     font-size: 2.5rem;
+}
+
+.form-group:nth-child(1) {
+    margin: 4.5rem 0rem;
 }
 
 .form-group > * {
@@ -316,4 +313,13 @@ form > * {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+
+.carousel-item > img {
+    transform: translateY(-50%);
+    width: 100vw;
+}
+
+.carousel {
+    height: 50vh;
 }
