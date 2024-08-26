@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers Day</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 700px;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .card {
+            width: 700px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 1s;
+        }
+
+        .card.active {
+            transform: translateX(0);
+        }
+
+        .card.next {
+            transform: translateX(100%);
+        }
+
+        .card.prev {
+            transform: translateX(-100%);
+        }
+
+        .outside, .inside {
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            left: 50%;
+        }
+
+        .inside {
+            background-image: url('https://github.com/raja986/trizzglobal/raw/main/background.svg');
+            line-height: 3;
+            padding: 3%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            left: 50%;
+        }
+
+        .outside {
+            transform-style: preserve-3d;
+            transform-origin: left;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .front, .back {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            background: url('https://github.com/raja986/trizzglobal/raw/main/background.svg');
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 2; /* Ensure the front is above the back */
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            background: linear-gradient(90deg, #ffd885 0%, #fcc348 100%);
+            z-index: 1; /* Ensure the back is behind the front */
+        }
+
+        .inside p {
+            font-size: 1.3rem;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .nav-btn {
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Sample Card 1 -->
+        <div class="card active">
+            <div class="outside">
+                <div class="front">
+                    <h1>Physics</h1>
+                    <img src="https://github.com/raja986/trizzglobal/raw/main/teacherTextBox.svg" class="txt" alt="Teacher Text Box">
+                    <h1>KAVITHA mam</h1>
+                    <img src="https://github.com/raja986/trizzglobal/raw/main/StudentTeacher.svg" alt="Student and Teacher" class="studentTeacher">
+                </div>
+                <div class="back">
+                    <h1>Physics Message</h1>
+                    <p>This is a message related to the Physics card. It will be revealed when the card flips.</p>
+                </div>
+            </div>
+            <div class="inside">
+                <h1>Messages</h1>
+                <p>Here is some additional content or messages about Physics.</p>
+            </div>
+        </div>
+
+        <!-- Sample Card 2 -->
+        <div class="card next">
+            <div class="outside">
+                <div class="front">
+                    <h1>Mathematics</h1>
+                    <img src="https://github.com/raja986/trizzglobal/raw/main/teacherTextBox.svg" class="txt" alt="Teacher Text Box">
+                    <h1>ARJUN SIR</h1>
+                    <img src="https://github.com/raja986/trizzglobal/raw/main/StudentTeacher.svg" alt="Student and Teacher" class="studentTeacher">
+                </div>
+                <div class="back">
+                    <h1>Mathematics Message</h1>
+                    <p>This is a message related to the Mathematics card. It will be revealed when the card flips.</p>
+                </div>
+            </div>
+            <div class="inside">
+                <h1>Messages</h1>
+                <p>Here is some additional content or messages about Mathematics.</p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation">
+            <button class="nav-btn" onclick="prevCard()">&#10094;</button>
+            <button class="nav-btn" onclick="nextCard()">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const cards = document.querySelectorAll('.card');
+        const totalCards = cards.length;
+
+        function updateCardPosition() {
+            cards.forEach((card, index) => {
+                card.classList.remove('active', 'next', 'prev');
+                if (index === currentIndex) {
+                    card.classList.add('active');
+                } else if (index === (currentIndex + 1) % totalCards) {
+                    card.classList.add('next');
+                } else if (index === (currentIndex - 1 + totalCards) % totalCards) {
+                    card.classList.add('prev');
+                }
+            });
+        }
+
+        function nextCard() {
+            currentIndex = (currentIndex + 1) % totalCards;
+            updateCardPosition();
+        }
+
+        function prevCard() {
+            currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+            updateCardPosition();
+        }
+
+        updateCardPosition(); // Initialize the card positions
+    </script>
+</body>
+</html>
